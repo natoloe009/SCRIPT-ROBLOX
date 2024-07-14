@@ -147,7 +147,7 @@ Outcome :
 10
 42
 ```
-Not Work for mobile!
+This Slider Is Fixed For Mobile!
 ## Drop-down
 
 ---
