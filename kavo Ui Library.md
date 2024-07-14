@@ -25,8 +25,7 @@ This Will Be Your Starting If This Is Not In Your Script Then It Will Not Work!
 
 ```lua
 local Window = Library.CreateLib("TITLE", "DarkTheme")
-
---[[
+```
 Themes:
     LightTheme
     DarkTheme
@@ -35,9 +34,8 @@ Themes:
     Ocean
     Midnight
     Sentinel
-]]
-```
-
+    
+    
 ## Creating Tabs
 
 ---
