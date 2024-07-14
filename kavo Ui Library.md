@@ -56,7 +56,7 @@ Window:NewTab(
 
 ## Creating Section
 
-```
+```lua
 local Section = Tab:NewSection("Section Name")
 
 --[[
