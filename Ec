@@ -1,0 +1,130 @@
+-- LocalScript to be placed in StarterPlayerScripts
+
+local CoreGui = game:GetService("CoreGui")
+
+-- Function to temporarily change button text
+local function temporaryButtonText(button, newText, duration)
+    local originalText = button.Text
+    button.Text = newText
+    task.wait(duration)  -- Using task.wait for better performance
+    button.Text = originalText
+end
+
+-- Check if GUI already exists in CoreGui
+local existingGui = CoreGui:FindFirstChild("ExecuteGui")
+
+if not existingGui then
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "ExecuteGui"
+    screenGui.Parent = CoreGui
+
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(0.6, 0, 0.6, 0) -- Adjust size to fit screen
+    frame.Position = UDim2.new(0.2, 0, 0.2, 0) -- Center position
+    frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    frame.BackgroundTransparency = 0.5
+    frame.Visible = false
+    frame.Parent = screenGui
+
+    -- Add a title label above the GUI
+    local titleLabel = Instance.new("TextLabel")
+    titleLabel.Size = UDim2.new(1, 0, 0.2, 0) -- Full width, 20% height
+    titleLabel.Position = UDim2.new(0, 0, -0.2, 0) -- Positioned above the frame
+    titleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    titleLabel.BackgroundTransparency = 0.5
+    titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    titleLabel.Text = "KaGa HUB Executor"
+    titleLabel.TextScaled = true
+    titleLabel.TextStrokeTransparency = 0.7
+    titleLabel.Parent = frame
+
+    local inputBox = Instance.new("TextBox")
+    inputBox.Size = UDim2.new(0.7, 0, 0.8, 0) -- 70% width, 80% height
+    inputBox.Position = UDim2.new(0, 0, 0, 0) -- Positioned to the left
+    inputBox.MultiLine = true
+    inputBox.Text = ""
+    inputBox.TextSize = 24 -- Set larger text size
+    inputBox.Parent = frame
+
+    local buttonFrame = Instance.new("Frame")
+    buttonFrame.Size = UDim2.new(0.3, 0, 1, 0) -- 30% width, full height
+    buttonFrame.Position = UDim2.new(0.7, 0, 0, 0) -- Right side of the main frame
+    buttonFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    buttonFrame.BackgroundTransparency = 0.6
+    buttonFrame.Parent = frame
+
+    local copyButton = Instance.new("TextButton")
+    copyButton.Size = UDim2.new(1, 0, 0.15, 0) -- Full width, 15% height
+    copyButton.Position = UDim2.new(0, 0, 0.1, 0) -- Positioned at the top
+    copyButton.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+    copyButton.Text = "Copy Text"
+    copyButton.Parent = buttonFrame
+
+    local clearButton = Instance.new("TextButton")
+    clearButton.Size = UDim2.new(1, 0, 0.15, 0) -- Full width, 15% height
+    clearButton.Position = UDim2.new(0, 0, 0.3, 0) -- Positioned below the copy button
+    clearButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    clearButton.Text = "Clear Text"
+    clearButton.Parent = buttonFrame
+
+    local executeButton = Instance.new("TextButton")
+    executeButton.Size = UDim2.new(1, 0, 0.15, 0) -- Full width, 15% height
+    executeButton.Position = UDim2.new(0, 0, 0.5, 0) -- Positioned below the clear button
+    executeButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    executeButton.Text = "Execute Script"
+    executeButton.Parent = buttonFrame
+
+    local toggleButton = Instance.new("TextButton")
+    toggleButton.Size = UDim2.new(0.1, 0, 0.1, 0)
+    toggleButton.Position = UDim2.new(0.9, 0, 0.1, 0) -- Top-right corner
+    toggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    toggleButton.Text = "Toggle"
+    toggleButton.Parent = screenGui
+
+    local destroyButton = Instance.new("TextButton")
+    destroyButton.Size = UDim2.new(0.1, 0, 0.1, 0) -- Same size as toggle button
+    destroyButton.Position = UDim2.new(0.8, 0, 0.1, 0) -- Positioned next to the toggle button
+    destroyButton.BackgroundColor3 = Color3.fromRGB(255, 165, 0) -- Orange color for distinction
+    destroyButton.Text = "Destroy"
+    destroyButton.Parent = screenGui
+
+    -- Function to toggle GUI visibility
+    toggleButton.MouseButton1Click:Connect(function()
+        frame.Visible = not frame.Visible
+    end)
+
+    -- Function to destroy the GUI
+    destroyButton.MouseButton1Click:Connect(function()
+        if screenGui then
+            screenGui:Destroy()
+        end
+    end)
+
+    -- Function to execute script
+    executeButton.MouseButton1Click:Connect(function()
+        local scriptToExecute = inputBox.Text
+        if scriptToExecute ~= "" then
+            local func, errorMsg = loadstring(scriptToExecute)
+            if func then
+                pcall(func)
+                temporaryButtonText(executeButton, "Executed!", 2)
+            else
+                warn("Error loading script: " .. errorMsg)
+                temporaryButtonText(executeButton, "Error!", 2)
+            end
+        end
+    end)
+
+    -- Function to clear text
+    clearButton.MouseButton1Click:Connect(function()
+        inputBox.Text = ""
+        temporaryButtonText(clearButton, "Cleared!", 2)
+    end)
+
+    -- Function to copy text
+    copyButton.MouseButton1Click:Connect(function()
+        -- Copy text to clipboard
+        setclipboard(inputBox.Text)
+        temporaryButtonText(copyButton, "Copied!", 2)
+    end)
+end
