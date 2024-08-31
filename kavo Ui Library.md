@@ -13,7 +13,7 @@ Here Is A Image Of The Ui Library
 ---
 
 ```lua
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F", true))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/main/kavo%20mobile.txt", true))()
 ```
 
 This Will Be Your Starting If This Is Not In Your Script Then It Will Not Work!
