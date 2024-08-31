@@ -168,6 +168,26 @@ Section:NewDropdown(
 
 Dropdown Is A Thing Used To Adjust Tables In "LUA" <br />
 
+## Dropdown Refresh
+
+---
+
+```lua
+local oldList = {
+  "2019",
+  "2020"
+}
+local newList = {
+  "2021",
+  "2022"
+}
+local dropdown = Section:NewDropdown("Dropdown","Info", oldList, function()
+
+end)
+Section:NewButton("Update Dropdown", "Refreshes Dropdown", function()
+  dropdown:Refresh(newList)
+end)
+```
 ## Textbox
 
 ---
@@ -189,3 +209,22 @@ Section:NewTextBox(
 ```
 
 Just A Textbox :]
+
+## Creating Keybinds
+
+---
+
+```lua
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	print("You just clicked the bind")
+end)
+```
+## Toggling UI with Keybinds
+
+---
+
+```lua
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+```
