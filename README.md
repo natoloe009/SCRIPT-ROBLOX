@@ -1,1 +1,1 @@
-KaGa HUB Is Thailand 
+KaGa HUB
