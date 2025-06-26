@@ -663,14 +663,14 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 		Minimized = not Minimized    
 	end)
-	--[[
+
 	AddConnection(CloseBtn.MouseButton1Up, function()
-	  OrionLib:MakeNotification({Name = "KaGa HUB",Content = "Destroy Script..." ,Image = "rbxassetid://",Time = 5})task.wait(1)
+	  --OrionLib:MakeNotification({Name = "KaGa HUB",Content = "Destroy Script..." ,Image = "rbxassetid://",Time = 5})task.wait(1)
 	  Orion:Destroy()
 	end)
 
-	OrionLib:MakeNotification({Name = "KaGa HUB",Content = "Execute Script..." ,Image = "rbxassetid://",Time = 5})
-     ]]
+	--OrionLib:MakeNotification({Name = "KaGa HUB",Content = "Execute Script..." ,Image = "rbxassetid://",Time = 5})
+     
 	local function LoadSequence()
 		MainWindow.Visible = false
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
