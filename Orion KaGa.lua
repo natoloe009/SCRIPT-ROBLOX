@@ -472,14 +472,14 @@ function OrionLib:MakeWindow(WindowConfig)
 	local UIHidden = false
 
 	WindowConfig = WindowConfig or {}
-	WindowConfig.Name = WindowConfig.Name or "REDz HUB"
+	WindowConfig.Name = WindowConfig.Name or "KaGa HUB"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
 	WindowConfig.SaveConfig = WindowConfig.SaveConfig or false
 	WindowConfig.HidePremium = WindowConfig.HidePremium or false
 	if WindowConfig.IntroEnabled == nil then
 		WindowConfig.IntroEnabled = true
 	end
-	WindowConfig.IntroText = WindowConfig.IntroText or "REDz HUB"
+	WindowConfig.IntroText = WindowConfig.IntroText or "KaGa HUB"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
 	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
@@ -663,14 +663,14 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 		Minimized = not Minimized    
 	end)
-	
+	--[[
 	AddConnection(CloseBtn.MouseButton1Up, function()
 	  OrionLib:MakeNotification({Name = "KaGa HUB",Content = "Destroy Script..." ,Image = "rbxassetid://",Time = 5})task.wait(1)
 	  Orion:Destroy()
 	end)
 
 	OrionLib:MakeNotification({Name = "KaGa HUB",Content = "Execute Script..." ,Image = "rbxassetid://",Time = 5})
-
+     ]]
 	local function LoadSequence()
 		MainWindow.Visible = false
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
