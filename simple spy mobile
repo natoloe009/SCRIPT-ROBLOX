@@ -1,1 +1,0 @@
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/MMVGGV/SimpleSpy/refs/heads/main/Mobile.lua'),true))()
