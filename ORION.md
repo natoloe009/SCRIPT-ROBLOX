@@ -3,7 +3,7 @@ This documentation is for the Modified Orion Library.
 
 ## Booting the Library
 ```lua
-local OrionLib = loadstring(https://raw.githubusercontent.com/natoloe009/TEST-ANYTHING-/refs/heads/main/Protected_7482553827960363.lua.txt')))()
+local OrionLib = loadstring('https://raw.githubusercontent.com/natoloe009/TEST-ANYTHING-/refs/heads/main/Protected_7482553827960363.lua.txt')))()
 ```
 
 
