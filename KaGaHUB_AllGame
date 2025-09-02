@@ -1,0 +1,33 @@
+local xcheck = tostring(game.PlaceId)
+if xcheck == "394506555" then
+GP = true;
+elseif xcheck == "2504590032" then
+opos = true;
+elseif xcheck == "88448392840247" then
+honeypiece = true;
+elseif xcheck == "662417684" then
+luckyblock = true;
+elseif xcheck == "88728793053496" then
+bulidacar = true;
+elseif xcheck == "3276265788" or xcheck == "3101667897" or xcheck == "3232996272" then
+legendofspeed = true;
+elseif xcheck == "3823781113" then
+sabersimulator = true;
+end
+
+
+if GP then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/928272gwowhw.txt'),true))()
+elseif opos then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/0079igo97rgiiyr7ub/refs/heads/main/idiot%20seas.txt'),true))()
+elseif honeypiece then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/honey%20Piece.luau'),true))()
+elseif luckyblock then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/lucky%20block.lua'),true))()
+elseif bulidacar then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/build%20a%20car.txt'),true))()
+elseif legendofspeed then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/Legend%20Of%20Speed.txt'),true))()
+elseif sabersimulator then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/saber%20simulator.lua'),true))()
+end
