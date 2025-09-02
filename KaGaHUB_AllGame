@@ -13,6 +13,8 @@ elseif xcheck == "3276265788" or xcheck == "3101667897" or xcheck == "3232996272
 legendofspeed = true;
 elseif xcheck == "3823781113" then
 sabersimulator = true;
+elseif xcheck == "122894212990308" then
+horizon = true;
 end
 
 
@@ -30,4 +32,6 @@ elseif legendofspeed then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/Legend%20Of%20Speed.txt'),true))()
 elseif sabersimulator then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/saber%20simulator.lua'),true))()
+elseif horizon then
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/horizonlegacyfuckingstupid.txt'),true))()
 end
