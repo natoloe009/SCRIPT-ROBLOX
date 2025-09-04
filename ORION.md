@@ -3,7 +3,7 @@ This documentation is for the Modified Orion Library.
 
 ## Booting the Library
 ```lua
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/TEST-ANYTHING-/refs/heads/main/Protected_7482553827960363.lua.txt'),true))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/TEST-ANYTHING-/refs/heads/main/orio%20ui.txt'),true))()
 ```
 
 
