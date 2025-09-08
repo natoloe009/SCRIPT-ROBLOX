@@ -130,35 +130,6 @@ Save = <bool> - Whether to save this toggle's value in config.
 Toggle:Set(true)
 ```
 
-
-
-## Creating a Color Picker
-```lua
-local ColorPicker = Tab:AddColorpicker({
-    Name = "Colorpicker",
-    Default = Color3.fromRGB(255, 0, 0),
-    Callback = function(Value)
-        print(Value)
-    end,
-    Flag = "color_flag", -- Optional
-    Save = true -- Optional
-})
-
---[[
-Name = <string> - The name of the colorpicker.
-Default = <Color3> - The default value of the colorpicker.
-Callback = <function> - The function of the colorpicker.
-Flag = <string> - The flag identifier for config saving.
-Save = <bool> - Whether to save this colorpicker's value in config.
-]]
-```
-
-### Setting the color picker's value
-```lua
-ColorPicker:Set(Color3.fromRGB(255, 255, 255))
-```
-
-
 ## Creating a Slider
 ```lua
 local Slider = Tab:AddSlider({
@@ -572,15 +543,6 @@ local PlayerESPToggle = VisualsTab:AddToggle({
     end
 })
 
-local ESPColorPicker = VisualsTab:AddColorpicker({
-    Name = "ESP Color",
-    Default = Color3.fromRGB(255, 0, 0),
-    Save = true,
-    Flag = "ESPColor",
-    Callback = function(Value)
-        -- Update ESP color logic here
-    end
-})
 
 local ItemESPToggle = VisualsTab:AddToggle({
     Name = "Item ESP",
