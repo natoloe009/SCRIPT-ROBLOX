@@ -25,7 +25,7 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/0079igo97
 elseif honeypiece then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/honey%20Piece.luau'),true))()
 elseif luckyblock then
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/lucky%20block.lua'),true))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/Lucky%20block'),true))()
 elseif bulidacar then
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/natoloe009/SCRIPT-ROBLOX/refs/heads/main/build%20a%20car.txt'),true))()
 elseif legendofspeed then
